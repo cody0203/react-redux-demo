@@ -4,9 +4,9 @@ import { DATA_LOADED, DATA_REQUESTED } from "../constants/action-types";
 function* workerSaga() {
   try {
     const data = yield call(getData);
-    yield put({ type: DATA_LOADED, data });
+    yield put({ type: DATA_LOADED, payload: data });
   } catch (e) {
-    yield put({ type: "API_ERRORED", data: e });
+    yield put({ type: "API_ERRORED", payload: e });
   }
 }
 

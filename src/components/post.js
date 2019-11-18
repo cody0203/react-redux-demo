@@ -4,7 +4,7 @@ import { getData } from "../js/actions/index";
 
 function mapStateToProps(state) {
   return {
-    articles: state.remoteArticles.slice(0, 10)
+    articles: state.remoteArticles
   };
 }
 
@@ -15,15 +15,12 @@ export class Post extends Component {
   render() {
     return (
       <ul>
-        {this.props.articles.map(el => (
+        {/* {this.props.articles.map(el => (
           <li key={el.id}>{el.title}</li>
-        ))}
+        ))} */}
       </ul>
     );
   }
 }
 
-export default connect(
-  mapStateToProps,
-  { getData }
-)(Post);
+export default connect(mapStateToProps, { getData })(Post);
